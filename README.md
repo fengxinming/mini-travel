@@ -9,7 +9,7 @@
 ## How to get codes from remote GIT repository
 
 ```bash
-$ git@gitlab.ziztour.loc:tmc/mini-travel.git
+$ git@github.com:fengxinming/mini-travel.git
 $ cd mini-travel
 $ cnpm install
 ```
