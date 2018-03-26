@@ -1,0 +1,15 @@
+{
+	"description": "A mini program for ziztour travel",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx7afde3458534e61d",
+	"projectname": "mini-travel",
+	"miniprogramRoot": "./dist",
+	"condition": {}
+}
