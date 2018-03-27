@@ -1,0 +1,128 @@
+page
+  height 100%
+  background #F2F5FA
+  .banners
+    height px2rpx(260px)
+    width 100%
+    line-height @height
+    font-size px2rpx(100px)
+    text-align center
+    background #b2b2b2
+  .search-panel
+    background: #fff
+    border-radius: px2rpx(8px)
+    margin 0 auto
+    width px2rpx(710px)
+    height px2rpx(848px)
+    position relative
+    z-index 50
+    top px2rpx(-20px)
+
+    .tabs
+      background: rgba(#3B4F62, 0.03)
+      border-radius: 8px 8px 0 0
+      height px2rpx(120px)
+      line-height @height
+      width 100%
+      display flex
+      text-align center
+      .tab
+        display block
+        flex 1
+        font-size: px2rpx(34px)
+        color: #3B4F62
+        font-weight: 600
+        &.active
+          position relative
+          color #0CC071
+          &::after
+            content ''
+            position absolute
+            width px2rpx(240px)
+            height px2rpx(8px)
+            background #0CC071
+            bottom 0
+            left 50%
+            transform unquote('translate3d(-50%,0,0)')
+
+    .conditions
+      box-sizing: border-box
+      margin 0
+      padding 0 px2rpx(25px)
+      display block
+      .condition-row
+        height px2rpx(130px)
+        display flex
+        border-bottom 1rpx solid #ECEFF4
+        &.row-01
+          line-height @height
+          .location
+            flex 1
+            font-size px2rpx(46px)
+            color #3B4F62
+            font-weight 600
+          .location-handler
+            flex 1
+            font-size px2rpx(26px)
+            color #3B4F62
+            font-weight 600
+            text-align right
+
+        &.row-02
+          .date
+            flex 2
+            margin-top px2rpx(25px)
+            &.right
+              text-align right
+            .sub-desc
+              font-size px2rpx(22px)
+              color #BFC3CD
+              height px2rpx(26px)
+              line-height @height
+              display block
+            .datetime
+              margin-top px2rpx(14px)
+              font-weight 600
+              font-size px2rpx(36px)
+              color #3B4F62
+              height px2rpx(40px)
+              line-height @height
+              display block
+          .between
+            flex 2
+            text-align center
+            line-height: @height
+            .desc
+              font-size px2rpx(24px)
+              border 1rpx solid #D7D7D7
+              border-radius px2rpx(8px)
+              color #BFC3CD
+              width px2rpx(90px)
+              height px2rpx(40px)
+              line-height: @height
+              display inline-block
+              vertical-align: middle
+              .day
+                color #000000
+                font-weight: 600
+        &.row-03
+          line-height @height
+          .keyword
+            flex 1
+            font-size px2rpx(36px)
+            color #BFC3CD
+
+      .search-button
+        margin-top px2rpx(60px)
+        background: #0CC071
+        border-radius: 8px
+        font-size: px2rpx(34px)
+        color: #FFFFFF
+        height px2rpx(100px)
+        line-height @height
+        width 100%
+        outline none
+        border 0 none
+        user-select none
+        text-align center
+

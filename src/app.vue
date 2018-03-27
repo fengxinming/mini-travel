@@ -19,33 +19,34 @@ export default class extends wepy.app {
       navigationBarTitleText: '差旅',
       navigationBarTextStyle: 'black'
     },
-    // tabBar: {
-    //   color: '#8a8a8a',
-    //   selectedColor: '#1F9948',
-    //   borderStyle: 'white',
-    //   backgroundColor: '#fff',
-    //   list: [{
-    //     pagePath: 'pages/home',
-    //     iconPath: 'images/icon-home.png',
-    //     selectedIconPath: 'images/icon-home-select.png',
-    //     text: '首页'
-    //   }, {
-    //     pagePath: 'pages/classify',
-    //     iconPath: 'images/icon-classify.png',
-    //     selectedIconPath: 'images/icon-classify-select.png',
-    //     text: '分类'
-    //   }, {
-    //     pagePath: 'pages/shoppingCart',
-    //     iconPath: 'images/icon-shopcart.png',
-    //     selectedIconPath: 'images/icon-shopcart-select.png',
-    //     text: '购物车'
-    //   }, {
-    //     pagePath: 'pages/my',
-    //     iconPath: 'images/icon-my.png',
-    //     selectedIconPath: 'images/icon-my-select.png',
-    //     text: '我的'
-    //   }]
-    // }
+    pages: ['pages/booking', 'pages/orders'],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black',
+      backgroundColor: '#F2F5FA'
+    },
+    tabBar: {
+      color: '#BFC3CD',
+      selectedColor: '#0CC071',
+      borderStyle: 'white',
+      backgroundColor: '#fff',
+      list: [
+        {
+          pagePath: 'pages/booking',
+          iconPath: 'images/icon-booking.png',
+          selectedIconPath: 'images/icon-booking2.png',
+          text: '预订'
+        },
+        {
+          pagePath: 'pages/orders',
+          iconPath: 'images/icon-orders.png',
+          selectedIconPath: 'images/icon-orders2.png',
+          text: '订单'
+        }
+      ]
+    }
   };
 
   globalData = {
@@ -73,17 +74,5 @@ export default class extends wepy.app {
   }
 }
 </script>
-<style lang="stylus">
-@require './styles/weui.css';
-page{
-  background-color: #f2f2f2;
-}
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-</style>
+
+<style lang="stylus" src="./css/app.styl"></style>
