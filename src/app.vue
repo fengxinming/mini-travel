@@ -10,13 +10,42 @@ setStore(store);
 
 export default class extends wepy.app {
   config = {
-    pages: ['pages/index'],
+    pages: [
+      'pages/index'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '差旅',
       navigationBarTextStyle: 'black'
-    }
+    },
+    // tabBar: {
+    //   color: '#8a8a8a',
+    //   selectedColor: '#1F9948',
+    //   borderStyle: 'white',
+    //   backgroundColor: '#fff',
+    //   list: [{
+    //     pagePath: 'pages/home',
+    //     iconPath: 'images/icon-home.png',
+    //     selectedIconPath: 'images/icon-home-select.png',
+    //     text: '首页'
+    //   }, {
+    //     pagePath: 'pages/classify',
+    //     iconPath: 'images/icon-classify.png',
+    //     selectedIconPath: 'images/icon-classify-select.png',
+    //     text: '分类'
+    //   }, {
+    //     pagePath: 'pages/shoppingCart',
+    //     iconPath: 'images/icon-shopcart.png',
+    //     selectedIconPath: 'images/icon-shopcart-select.png',
+    //     text: '购物车'
+    //   }, {
+    //     pagePath: 'pages/my',
+    //     iconPath: 'images/icon-my.png',
+    //     selectedIconPath: 'images/icon-my-select.png',
+    //     text: '我的'
+    //   }]
+    // }
   };
 
   globalData = {
@@ -45,6 +74,10 @@ export default class extends wepy.app {
 }
 </script>
 <style lang="stylus">
+@require './styles/weui.css';
+page{
+  background-color: #f2f2f2;
+}
 .container {
   height: 100%;
   display: flex;

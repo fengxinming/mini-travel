@@ -24,7 +24,8 @@ module.exports = {
       compress: prod
     },
     stylus: {
-      compress: prod
+      compress: prod,
+      'include css': true
     },
     pug: {
 
