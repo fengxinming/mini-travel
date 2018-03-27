@@ -1,6 +1,6 @@
 const path = require('path');
 var prod = process.env.NODE_ENV === 'production';
-
+console.log(require('nib').path);
 module.exports = {
   wpyExt: '.vue',
   eslint: false,
@@ -24,7 +24,10 @@ module.exports = {
       compress: prod
     },
     stylus: {
-      compress: prod
+      compress: prod,
+      supportObject: true,
+      'include css': true,
+      imports: [path.join('src', 'css', 'utils', '**/*.styl')]
     },
     pug: {
 

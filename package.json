@@ -1,7 +1,7 @@
 {
   "name": "mini-travel",
   "version": "0.0.1",
-  "description": "A mini program for ziztour travel",
+  "description": "A mini program for travel",
   "main": "dist/app.js",
   "scripts": {
     "dev": "wepy build --watch",
