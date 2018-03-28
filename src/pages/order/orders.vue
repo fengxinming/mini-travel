@@ -34,14 +34,14 @@ export default class Index extends wepy.page {
   events = {};
 
   onLoad() {
-    let self = this;
-    this.$parent.getUserInfo(function(userInfo) {
-      if (userInfo) {
-        // self.userInfo = userInfo;
-        // self.$apply();
-        self.setData({ userInfo: userInfo });
-      }
-    });
+    // let self = this;
+    // this.$parent.getUserInfo(function(userInfo) {
+    //   if (userInfo) {
+    //     // self.userInfo = userInfo;
+    //     // self.$apply();
+    //     self.setData({ userInfo: userInfo });
+    //   }
+    // });
   }
 }
 </script>

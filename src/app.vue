@@ -13,7 +13,7 @@ export default class extends wepy.app {
     pages: [
       'pages/booking',
       'pages/order/orders',
-      'pages/hotel-list'
+      'pages/hotel/list'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -45,6 +45,7 @@ export default class extends wepy.app {
   };
 
   globalData = {
+    imagePathPrefix: 'images',
     userInfo: null
   };
 
