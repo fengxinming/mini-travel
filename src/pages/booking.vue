@@ -1,17 +1,19 @@
 
 <template lang='pug'>
   view.container
-    .banners
-      | 广告位
-    .search-panel
-      ul.tabs
-        li.tab 机票
-        li.tab.active 酒店
-      hotel-panel
+    view.banners
+      text 广告位
+    view.search-panel
+      view.tabs
+        view.tab(class="{{ tabIndex == 0 ? 'active' : '' }}", @tap="switchTab(0)") 机票
+        view.tab(class="{{ tabIndex == 1 ? 'active' : '' }}", @tap="switchTab(1)") 酒店
+      flight-panel(:tabIndex.sync='tabIndex')
+      hotel-panel(:tabIndex.sync='tabIndex')
 </template>
 
 <script>
 import wepy from 'wepy';
+import FlightPanel from '@/components/booking/flight-panel';
 import HotelPanel from '@/components/booking/hotel-panel';
 // import testMixin from '../mixins/test';
 
@@ -20,20 +22,24 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '蜘蛛差旅'
   };
   components = {
+    'flight-panel': FlightPanel,
     'hotel-panel': HotelPanel
   };
 
   // mixins = [testMixin];
 
   data = {
-    userInfo: {
-      nickName: '加载中...'
-    }
+    tabIndex: 1
   };
 
   computed = {};
 
-  methods = {};
+  methods = {
+    switchTab(tabIndex) {
+      this.tabIndex = tabIndex;
+      this.$apply();
+    }
+  };
 
   events = {};
 

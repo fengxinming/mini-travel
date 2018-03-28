@@ -10,7 +10,11 @@ setStore(store);
 
 export default class extends wepy.app {
   config = {
-    pages: ['pages/booking', 'pages/orders'],
+    pages: [
+      'pages/booking',
+      'pages/order/orders',
+      'pages/hotel-list'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -31,7 +35,7 @@ export default class extends wepy.app {
           text: '预订'
         },
         {
-          pagePath: 'pages/orders',
+          pagePath: 'pages/order/orders',
           iconPath: 'images/icon-orders.png',
           selectedIconPath: 'images/icon-orders2.png',
           text: '订单'
