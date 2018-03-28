@@ -13,7 +13,7 @@ page
     border-radius: px2rpx(8px)
     margin 0 auto
     width px2rpx(710px)
-    height px2rpx(848px)
+    height 100%
     position relative
     z-index 50
     top px2rpx(-20px)
@@ -43,7 +43,7 @@ page
             background #0CC071
             bottom 0
             left 50%
-            transform unquote('translate3d(-50%,0,0)')
+            transform translate3d(-50%,0,0)
 
     .conditions
       box-sizing: border-box
@@ -92,6 +92,10 @@ page
             flex 2
             text-align center
             line-height: @height
+            .exchange
+              width px2rpx(60)
+              height @width
+              vertical-align middle
             .desc
               font-size px2rpx(24px)
               border 1rpx solid #D7D7D7

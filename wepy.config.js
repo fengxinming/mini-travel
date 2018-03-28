@@ -1,9 +1,9 @@
 const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
-console.log(require('nib').path);
+const prod = process.env.NODE_ENV === 'production';
+
 module.exports = {
   wpyExt: '.vue',
-  eslint: false,
+  eslint: true,
   cliLogs: !prod,
   build: {
     web: {
@@ -27,7 +27,10 @@ module.exports = {
       compress: prod,
       supportObject: true,
       'include css': true,
-      imports: [path.join('src', 'css', 'utils', '**/*.styl')]
+      imports: [
+        path.join(require.resolve('stylus').slice(0, -8), 'lib', 'functions'),
+        path.join('src', 'css', 'utils', '**/*.styl')
+      ]
     },
     pug: {
 
@@ -49,7 +52,7 @@ module.exports = {
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
   }
-}
+};
 
 if (prod) {
   // 压缩js

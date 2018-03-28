@@ -4,25 +4,22 @@
   view.userinfo(@tap='handleViewTap')
     image.userinfo-avatar(src='{{ userInfo.avatarUrl }}', background-size='cover')
       view.userinfo-nickname {{ userInfo.nickName }}
-  panel
+  view
     | hello world
 
 </template>
 
 <script>
 import wepy from 'wepy';
-import Panel from '@/components/panel';
-import testMixin from '../mixins/test';
+// import testMixin from '../mixins/test';
 
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: 'test'
+    navigationBarTitleText: '订单'
   };
-  components = {
-    panel: Panel
-  };
+  components = {};
 
-  mixins = [testMixin];
+  // mixins = [testMixin];
 
   data = {
     userInfo: {

@@ -11,19 +11,14 @@ setStore(store);
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/booking',
+      'pages/order/orders',
+      'pages/hotel-list'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '差旅',
-      navigationBarTextStyle: 'black'
-    },
-    pages: ['pages/booking', 'pages/orders'],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '蜘蛛差旅',
       navigationBarTextStyle: 'black',
       backgroundColor: '#F2F5FA'
     },
@@ -40,7 +35,7 @@ export default class extends wepy.app {
           text: '预订'
         },
         {
-          pagePath: 'pages/orders',
+          pagePath: 'pages/order/orders',
           iconPath: 'images/icon-orders.png',
           selectedIconPath: 'images/icon-orders2.png',
           text: '订单'
