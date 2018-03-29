@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux'
-import counter from './counter'
+import { combineReducers } from 'redux';
+import cCalendar from './c-calendar';
 
 export default combineReducers({
-  counter
-})
+  cCalendar
+});

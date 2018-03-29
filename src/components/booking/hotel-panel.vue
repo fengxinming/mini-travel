@@ -29,11 +29,6 @@ export default class Panel extends wepy.component {
     tabIndex: [Number, String]
   };
   onLoad() {
-    // console.log(this.tabIndex);
-    // console.log(this);
-    // console.log(this.$parent);
-    // console.log(this.$parent.$parent);
-    // console.log(this.$parent.$parent.globalData);
   }
   methods = {
     searchHotel() {
