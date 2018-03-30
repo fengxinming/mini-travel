@@ -4,6 +4,7 @@ import 'wepy-async-function';
 
 import { setStore } from 'wepy-redux';
 import configStore from './store';
+import travelConfig from './travel.config';
 
 const store = configStore();
 setStore(store);
@@ -11,10 +12,12 @@ setStore(store);
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/hotel/search',
+      'pages/hotel/list',
+      'pages/hotel/detail',
       'pages/hotel/calendar',
       'pages/booking',
-      'pages/order/orders',
-      'pages/hotel/list'
+      'pages/order/orders'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -46,15 +49,19 @@ export default class extends wepy.app {
   };
 
   globalData = {
-    userInfo: null
+    userInfo: null,
+    travelConfig
   };
 
   constructor() {
     super();
     this.use('requestfix');
+    this.use('promisify'); // request将支持promise
   }
 
-  onLaunch() {}
+  onLaunch() {
+    global.travelConfig = travelConfig;
+  }
 
   getUserInfo(cb) {
     const that = this;
@@ -70,4 +77,4 @@ export default class extends wepy.app {
   }
 }
 </script>
-<style lang="stylus" src="./css/app.styl"></style>
+<style lang="styl" src="./css/app.styl"></style>

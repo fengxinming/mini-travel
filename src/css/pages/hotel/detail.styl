@@ -1,0 +1,312 @@
+page
+  background #F2F5FA
+  .detail-wrapper
+    .header
+      margin-bottom px2rpx(10px)
+      .img-wrapper
+        position relative
+        overflow hidden
+        .img
+          width 100%
+          height px2rpx(350px)
+          .img-banner
+            width 100%
+            height 100%
+        .hotel-title
+          display flex
+          width 100%
+          height px2rpx(130px)
+          position absolute
+          bottom 0
+          left 0
+          padding 0 px2rpx(30px)
+          background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%)
+          .left
+            flex 3
+            color #fff
+            padding-top px2rpx(20px)
+            .title
+              width 100%
+              overflow hidden
+              text-overflow ellipsis
+              white-space nowrap
+              font-size px2rpx(34px)
+              display block
+            .span
+              font-size px2rpx(24px)
+          .right
+            flex 1
+            color #fff
+            font-size px2rpx(24px)
+            padding-top px2rpx(78px)
+            .camera-icon
+              width px2rpx(28px)
+              height px2rpx(26px)
+              display inline-block
+              vertical-align middle
+      .location
+        width 100%
+        height px2rpx(128px)
+        background #fff
+        position relative
+        .info
+          position relative
+          z-index 2
+          width 80%
+          padding-left px2rpx(30px)
+          padding-top px2rpx(20px)
+          .title
+            width px2rpx(508px)
+            display block
+            font-size px2rpx(28px)
+            color #3b4f62
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+          .location-p
+            font-size px2rpx(24px)
+            color #9da4b5
+        .map
+          position absolute
+          right 0
+          bottom 0
+          top 0
+          width 50%
+          height px2rpx(128px)
+          z-index 1
+          overflow hidden
+          text-align right
+          .map-img
+            width px2rpx(350px)
+            height px2rpx(128px)
+            display inline-block
+            &::before
+              content: ''
+              display: block
+              position: absolute
+              width:100%
+              height:100%
+              background linear-gradient(to right, #fff, rgba(255,255,255, .9), rgba(255,255,255, .1), rgba(255,255,255, 0));
+          .map-location
+            display inline-block
+            width px2rpx(32px)
+            height px2rpx(32px)
+            position absolute
+            top px2rpx(50px)
+            right px2rpx(80px)
+    .comment-detail
+      margin-bottom px2rpx(10px)
+      background #fff
+      .tabs
+        height px2rpx(110px)
+        display flex
+        // padding px2rpx(30px)
+        // box-sizing border-box
+        .tab
+          flex 1
+          height px2rpx(110px)
+          font-size px2rpx(34px)
+          text-align center
+          color #ABB7C2
+          border-bottom px2rpx(1px) solid #F2F5FA
+          text
+            display block
+            margin px2rpx(30px) 0
+            height px2rpx(50px)
+            line-height @height
+            border-right px2rpx(1.5px) solid #ABB7C2
+            &.no-border
+              border none
+          &.active
+            color #0CC071
+            border-bottom px2rpx(2px) solid #0CC071
+      .tab-infos-1
+        padding px2rpx(40px) px2rpx(30px)
+        font-size px2rpx(24px)
+        color #9da4b5
+        height px2rpx(75px)
+        .title
+          line-height px2rpx(30px)
+          position relative
+          margin-bottom px2rpx(14px)
+          .comment
+            font-size px2rpx(24px)
+            color #0CC071
+          .comment-nums
+            float right
+            height px2rpx(30px)
+            padding-right px2rpx(40px)
+          .turn-right-icon
+            display block
+            width px2rpx(24px)
+            height px2rpx(24px)
+            position absolute
+            right px2rpx(0px)
+            top px2rpx(4px)
+        &.tab-infos-2
+          .comment
+            color #3b4f62
+            font-size px2rpx(30px)
+          .p-cont
+            .ss-icon
+              width px2rpx(30px)
+              height @width
+              vertical-align middle
+    .hotel-detail-list
+      margin-bottom px2rpx(10px)
+      .date
+        background #fff
+        height px2rpx(106px)
+        margin-bottom px2rpx(10px)
+        padding 0 px2rpx(30px)
+        display flex
+        .text-info
+          font-size px2rpx(22px)
+          color #bfc3cd
+        .day
+          font-size px2rpx(34px)
+          color #3b4f62
+          line-height px2rpx(40px)
+        .left-time
+          flex 1
+          padding-top px2rpx(16px)
+        .days
+          .day-num
+            display inline-block
+            vertical-align middle
+            border px2rpx(1px) solid #d7d7d7
+            border-radius px2rpx(8px)
+            font-size px2rpx(24px)
+            color #bfc3cd
+            padding px2rpx(5px)
+            text-align center
+            margin-top px2rpx(30px)
+            i
+              color #000
+        .right-time
+          padding-top px2rpx(16px)
+          flex 1
+          text-align right
+      .list
+        background #fff
+        .list-cont
+          height px2rpx(190px)
+          padding px2rpx(20px) px2rpx(30px)
+          border-bottom px2rpx(1px) solid #F2F5FA
+          box-sizing border-box
+          display flex
+          view.img-left
+            felx 1
+            .small-room-p
+              width px2rpx(150px)
+              height @width
+              border-radius px2rpx(2px)
+          .cont-right
+            flex 3
+            padding-left px2rpx(20px)
+            .title
+              font-size px2rpx(30px)
+              color #3b4f62
+            .room-cont
+              font-size px2rpx(24px)
+              color #bfc3cd
+              line-height px2rpx(40px)
+            .room-price
+              text-align right
+              line-height px2rpx(60px)
+              font-size px2rpx(44px)
+              color #EE4747
+              .text-1
+                font-size px2rpx(22px)
+                color #9da4b5
+                padding-left px2rpx(10px)
+              .jt-1
+                width px2rpx(18px)
+                height px2rpx(10px)
+                vertical-align middle
+                margin-left px2rpx(10px)
+    .recommend
+      .h2-title
+        background #fff
+        height px2rpx(100px)
+        font-size px2rpx(30px)
+        color #3B4F62
+        line-height @height
+        padding-left px2rpx(22px)
+        margin-bottom px2rpx(20px)
+        .recommend-icon
+          width px2rpx(29px)
+          height px2rpx(36px)
+          // vertical-align middle
+          margin-right px2rpx(20px)
+      .list
+        .list-dl
+          height px2rpx(220px)
+          overflow hidden
+          display flex
+          margin-bottom px2rpx(20px)
+          box-shadow: 0 px2rpx(2px) px2rpx(6px) 0 rgba(0,0,0,0.08)
+          background #fff
+          padding px2rpx(10px)
+          .list-dt
+            flex 2.7
+            overflow hidden
+            .list-img
+              width 100%
+              height 100%
+          .list-dd
+            flex 7.3
+            padding 0 px2rpx(25px)
+            .title
+              font-size px2rpx(32px)
+              color #3B4F62
+              line-height px2rpx(62px)
+            .comment
+              font-size px2rpx(24px)
+              color #9DA4B5
+              text
+                color #0CC071
+            p
+              font-size px2rpx(24px)
+              color #9DA4B5
+            .confirm
+              display flex
+              .btns
+                flex 3
+                i.btn
+                  border px2rpx(1.5px) solid #0cc071
+                  border-radius px2rpx(4px)
+                  font-size px2rpx(22px)
+                  color #0CC071
+                  padding px2rpx(5px)
+                  margin-right px2rpx(14px)
+              .price
+                flex 1
+                font-size px2rpx(22px)
+                color #9DA4B5
+                i.p
+                  color #ff0000
+                  font-size px2rpx(44px)
+    .nomore
+      position relative
+      i.line
+        display inline-block
+        width px2rpx(500px)
+        position absolute
+        top px2rpx(74px)
+        left 50%
+        margin-left px2rpx(-250px)
+        height px2rpx(1px)
+        background rgba(189,199,217,0.5)
+      text
+        position relative
+        display block
+        width px2rpx(212px)
+        height px2rpx(148px)
+        line-height px2rpx(146px)
+        font-size px2rpx(22px)
+        color #bfc3cd
+        text-align center
+        margin 0 auto
+        background #F2F5FA
+        z-index 9

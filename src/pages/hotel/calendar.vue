@@ -5,7 +5,10 @@
 <script>
 import wepy from 'wepy';
 import calendar from '@/components/calendar/index';
+import { getStore } from 'wepy-redux';
 import moment from 'moment';
+
+const store = getStore();
 
 export default class Panel extends wepy.page {
   config = {
@@ -21,8 +24,12 @@ export default class Panel extends wepy.page {
       .format('YYYY-MM-DD');
     return moment(date).isBefore(datebefore) || moment(date).isAfter(dateafter);
   }
+  onLoad() {
+    console.log(store.getState(), this);
+  }
 }
 </script>
 
-<style lang="stylus" src='./index.styl'>
+<style lang="styl" src='./index.styl'>
+
 </style>

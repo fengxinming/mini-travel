@@ -1,5 +1,23 @@
+'use strict';
+
 const path = require('path');
+const fs = require('fs');
+const Config = require('./utils/config');
+
 const prod = process.env.NODE_ENV === 'production';
+
+// ================= 动态生成配置文件 travel.config
+
+const TRAVEL_CONFIG_NAME = 'travel.config';
+const CONFIG_DIR = path.join(__dirname, 'conf');
+
+const configUtil = new Config({
+  confDir: CONFIG_DIR
+});
+const travelConfig = configUtil.get('travel');
+fs.writeFileSync(`./src/${TRAVEL_CONFIG_NAME}.js`, `module.exports = ${JSON.stringify(travelConfig)}`);
+
+// ================= wepy 配置参数 ===============
 
 module.exports = {
   wpyExt: '.vue',
@@ -23,17 +41,22 @@ module.exports = {
     less: {
       compress: prod
     },
-    stylus: {
+    styl: {
       compress: prod,
       supportObject: true,
-      'include css': true,
-      imports: [
-        path.join(require.resolve('stylus').slice(0, -8), 'lib', 'functions'),
+      includeCSS: true,
+      define: {
+        '$imagePrefix': travelConfig.imagePrefix
+      },
+      import: [
         path.join('src', 'css', 'utils', '**/*.styl')
       ]
     },
     pug: {
-
+      pretty: false,
+      data: {
+        imagePrefix: travelConfig.imagePrefix
+      }
     },
     babel: {
       sourceMap: true,
@@ -73,4 +96,15 @@ if (prod) {
       }
     }
   }
+} else {
+  // ================= 初始化一个本地开发服务，用于加载静态资源
+
+  const DEV_PORT = 7310;
+  const Koa = require('koa');
+  const serve = require('koa-static');
+  const app = new Koa();
+  app.use(serve(path.join(__dirname, 'public')));
+  app.listen(DEV_PORT, () => {
+    console.log(`本地服务正在监听端口${DEV_PORT}`);
+  });
 }
