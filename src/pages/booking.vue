@@ -56,4 +56,4 @@ export default class Index extends wepy.page {
 }
 </script>
 
-<style lang="stylus" src="../css/pages/booking.styl"></style>
+<style lang="styl" src="../css/pages/booking.styl"></style>

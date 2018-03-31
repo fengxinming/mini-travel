@@ -6,7 +6,7 @@
           text.sub-desc 出发
           text.datetime 深圳
         view.between
-          image.exchange(src='../../images/booking/exchange.png')
+          image.exchange(src='{{imagePrefix}}/images/booking/exchange.png')
         view.date.right
           text.sub-desc 到达
           text.datetime 北京
@@ -27,8 +27,11 @@ export default class Panel extends wepy.component {
   props = {
     tabIndex: [Number, String]
   };
+  data = {
+    imagePrefix: ''
+  };
   onLoad() {
-    console.log(this.tabIndex);
+    this.imagePrefix = this.$root.$parent.globalData.travelConfig.imagePrefix;
   }
 }
 </script>

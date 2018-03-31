@@ -28,34 +28,32 @@
         padding px2rpx(5px) 0
         // line-height @height
         font-size px2rpx(30px)
-        font-weight 500
-        color #ABB7C2
+        font-weight 600
+        color: #3B4F62
         vertical-align: top
         display inline-block
         // float: left;
         text-align center
         position relative
-        &.active
-          .calendar-grid-text
-            background #0CC071
-            color #fff
-        &.start
-          .calendar-grid-text
-            border-radius px2rpx(6px) 0 0 px2rpx(6px)
-        &.end
-          .calendar-grid-text  
-            border-radius 0 px2rpx(6px) px2rpx(6px) 0
-        .calendar-grid-text
-          width px2rpx(76px)
-          height 100%
-          margin 0 auto
-          .calendar-day
-            height px2rpx(40px)
-            line-height @height
-            display block
-          .calendar-day-note
-            font-size px2rpx(24px)
-            height px2rpx(30px)
-            line-height @height
-            display block
+        &.calendar-grid-disabled
+          color #ABB7C2
+        &.calendar-grid-range
+          background: rgba(12,192,113,0.15)
+          color #0CC071
+        &.calendar-grid-start, &.calendar-grid-end
+          background #0CC071
+          color #fff
+        &.calendar-grid-start
+          border-radius px2rpx(6px) 0 0 px2rpx(6px)
+        &.calendar-grid-end
+          border-radius 0 px2rpx(6px) px2rpx(6px) 0
+        .calendar-day
+          height px2rpx(40px)
+          line-height @height
+          display block
+        .calendar-day-note
+          font-size px2rpx(24px)
+          height px2rpx(30px)
+          line-height @height
+          display block
           

@@ -12,22 +12,30 @@
         text.calendar-month {{MONTH_LABELS[item.month]}}月
         view.calendar-grids
           repeat(for="{{item.days}}", key="index2", index="index2", item="item2")
-            view.calendar-grid(@tap="")
-              view.calendar-grid-text
-                text.calendar-day {{item2.date}}
-                text.calendar-day-note
+            view.calendar-grid(
+              class="{{item2.disabled?'calendar-grid-disabled':''}}{{!item2.disabled && selectedDays[0] == item2.datetime?' calendar-grid-start': ''}}{{!item2.disabled && selectedDays[1] == item2.datetime?' calendar-grid-end': ''}}{{!!rangedDays[item2.datetime] ? ' calendar-grid-range':''}}",
+              @tap="selectDate({{item2}})"
+            )
+              text.calendar-day {{item2.date}}
+              text.calendar-day-note {{!item2.disabled && selectedDays[0] == item2.datetime ? startLabel : !item2.disabled && selectedDays[1] == item2.datetime ? endLabel : ''}}
 </template>
 
 <script>
 import wepy from 'wepy';
 import { connect, getStore } from 'wepy-redux';
-import { CALE_INIT_DAYS } from '../../store/types/c-calendar';
+import { CALE_INIT_DAYS, CALE_SELECT_DAYS } from '../../store/types/c-calendar';
 
 const store = getStore();
 
 @connect({
   days(state) {
     return state.cCalendar.days;
+  },
+  selectedDays(state) {
+    return state.cCalendar.selectedDays;
+  },
+  rangedDays(state) {
+    return state.cCalendar.rangedDays;
   }
 })
 export default class Panel extends wepy.component {
@@ -35,7 +43,7 @@ export default class Panel extends wepy.component {
     // 是否多选
     multiple: {
       type: [String, Boolean],
-      default: false
+      default: true
     },
     // 一次渲染几个月
     duration: {
@@ -49,7 +57,7 @@ export default class Panel extends wepy.component {
     },
     value: {
       type: Array,
-      default: []
+      default: () => []
     },
 
     startLabel: {
@@ -80,6 +88,24 @@ export default class Panel extends wepy.component {
       ];
     }
   };
+  data = {};
+  methods = {
+    selectDate(item) {
+      if (!item.disabled) {
+        store.dispatch({
+          type: CALE_SELECT_DAYS,
+          params: {
+            item
+          }
+        });
+      }
+    }
+  };
+  watch = {
+    value(newVal, oldVal) {
+      console.log(newVal);
+    }
+  };
   onLoad() {
     store.dispatch({
       type: CALE_INIT_DAYS,
@@ -88,16 +114,8 @@ export default class Panel extends wepy.component {
         disabledDate: this.disabledDate
       }
     });
-    // wepy
-    //   .request({
-    //     url: 'https://dev.istay.cc'
-    //   })
-    //   .then(res => {
-    //     console.log(res);
-    //   });
   }
 }
 </script>
 
-<style lang="stylus" src='./index.styl'>
-</style>
+<style lang="styl" src='./index.styl'></style>

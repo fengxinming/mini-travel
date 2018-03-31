@@ -46,8 +46,7 @@ export default class Index extends wepy.page {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="styl">
 .userinfo {
   display: flex;
   flex-direction: column;

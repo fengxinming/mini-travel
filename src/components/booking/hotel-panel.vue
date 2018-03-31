@@ -33,7 +33,7 @@ export default class Panel extends wepy.component {
   methods = {
     searchHotel() {
       wx.navigateTo({
-        url: 'hotel/list'
+        url: '../../hotel/list'
       });
     }
   };
