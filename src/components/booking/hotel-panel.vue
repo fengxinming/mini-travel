@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="jade">
   view(hidden="{{tabIndex!=1}}")
     form(onsubmit='return false;').conditions
       view.condition-row.row-01

@@ -1,5 +1,4 @@
-
-<template lang='pug'>
+<template lang='jade'>
   view.container
     view.banners
       text 广告位

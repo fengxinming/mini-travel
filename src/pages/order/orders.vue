@@ -1,5 +1,5 @@
 
-<template lang='pug'>
+<template lang='jade'>
   view.container
   view.userinfo(@tap='handleViewTap')
     image.userinfo-avatar(src='{{ userInfo.avatarUrl }}', background-size='cover')

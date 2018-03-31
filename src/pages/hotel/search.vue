@@ -1,8 +1,8 @@
-<template lang="pug">
+<template lang="view">
   block(data-name="search-bar")
     view.search-wrapper
       view.search
-        image.search-icon(src="{{imagePrefix}}/images/hotel/search-icon.png" alt="搜索")
+        image.search-icon(src=travelConfig.imagePrefix+"/images/hotel/search-icon.png" alt="搜索")
         input.input-search(placeholder="酒店名/位置区域/地点")
       view.confirm 确定
   block(data-name="search-history")

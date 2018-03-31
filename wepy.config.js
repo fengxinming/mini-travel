@@ -52,11 +52,13 @@ module.exports = {
         path.join('src', 'css', 'utils', '**/*.styl')
       ]
     },
-    pug: {
-      pretty: false,
-      data: {
-        imagePrefix: travelConfig.imagePrefix
-      }
+    jade: {
+      engine: 'pug',
+      travelConfig
+    },
+    view: {
+      engine: 'pug',
+      travelConfig
     },
     babel: {
       sourceMap: true,

@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="jade">
   view.detail-wrapper
     view.header
       view.img-wrapper
