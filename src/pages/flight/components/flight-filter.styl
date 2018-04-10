@@ -1,0 +1,232 @@
+$green = #0CC071;
+
+.mask
+  width 100%
+  height 100%
+  background rgba(204, 204, 204, 0.4392156862745098)
+  position fixed
+  z-index 10
+  top 0
+  overflow hidden
+  #filter-wapper
+    position: absolute
+    bottom: 0
+    width: 100%
+    background: #fff
+    transform(translate3d(0,0,0))
+    transition(all, 0.15s, ease-in-out)
+    .head
+      overflow: hidden
+      // border-bottom: 1px solid #ccc
+      width: 100%
+      height px2rpx(106px)
+      line-height: @height
+      background-color rgba(59, 79, 98, 0.03)
+      font-size px2rpx(34px)
+      color $green
+      position: relative
+      z-index: 1
+      .button
+        width px2rpx(145px)
+        height: @height
+        line-height: @height
+        text-align: center
+        &.disabled
+          color #ccc
+        &.button-cancel
+          float: left
+        &.button-confirm
+          float: right
+        &.button-reset
+          margin: auto
+          color #85D9C2
+    .content
+      $content-max-height= px2rpx(720px)
+      $item-height= px2rpx(110px)
+
+      overflow: hidden     
+      font-size px2rpx(34px)
+      // margin-top: -1px
+      top: -1px
+      position: relative
+      z-index: 2
+      background-color $c-bgcolor
+      max-height px2rpx(720px)
+      overflow-y auto
+      display flex
+      .options-list,
+      .group-list
+        height: $content-max-height
+      .tips
+        color #FF7362
+        padding: 0.4rem 0.33rem;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+        line-height 0.6rem
+      .group-list-price
+        width 100% 
+        background-color: $c-bgcolor
+        padding 0 0.33rem
+        .item
+          height: $item-height
+          line-height: @height
+          color: $c-color-gray2
+          border-bottom: 1px solid #cccccc
+          &.active
+            position: relative
+            border-width: 1px 0
+            &::after
+              content: ''
+              display: block
+              position: absolute
+              right: 0.53rem
+              top: 50%
+              width px2rpx(47)
+              height: @width
+              margin-top: px2rpx(47) * -0.5
+              background inline-url("images/flight/v2/icon-check_1.png") center no-repeat
+              background-size contain
+          &:last-child
+            border-bottom none
+      .group-list
+        float: left
+        margin-top -1px
+        width 26.263%
+        background-color #F9F9FA
+        flex 1
+        .item
+          padding-left px2rpx(25px)
+          height: $item-height
+          line-height: @height
+          color #666
+          display block
+          &.active
+            position: relative
+            border-width: 1px 0
+            background-color: #fff
+            &::after
+              content: ''
+              display: block
+              position: absolute
+              right: -3px
+              top: 0
+              height: 100%
+              width: 4px
+              background-color: #fff
+      .options-list
+        overflow: auto
+        background-color: #fff
+        flex 2
+        // border-top: 1px solid #cccccc;
+        
+      .other
+        padding-left px2rpx(24px)
+        .item
+          position: relative
+          padding-left px2rpx(33px)
+          height: $item-height
+          line-height: @height
+          overflow ellipsis
+          color #333
+          border-bottom 1px solid #e2e2e2
+          display block
+          &.active::after
+            content: ''
+            display: block
+            position: absolute
+            top: 50%
+            right: 0.53rem
+            width px2rpx(44)
+            height: @width
+            margin-top: @height * -0.5
+            // background inline-url( travelConfig.imgUrlPrefix + "images/flight/left.png") center no-repeat
+            background-size contain
+      .timer
+        padding-left px2rpx(24px)
+        .time-section
+          overflow auto
+          background-color #fff
+          .item
+            position: relative
+            padding-left px2rpx(33px)
+            height: $item-height
+            line-height: @height
+            overflow ellipsis
+            color #333
+            border-bottom 1px solid #e2e2e2
+            display block
+            &.active::after
+              content: ''
+              display: block
+              position: absolute
+              top: 50%
+              right: 0.53rem
+              width px2rpx(44)
+              height: @width
+              margin-top: @height * -0.5
+              background inline-url("images/flight/v2/icon-check_1.png") center no-repeat
+              background-size contain
+
+        .slider
+          margin: auto
+          width 80%
+          border-top: 1px solid $c-border-color
+          .date
+            // overflow: hidden
+            color #333
+            font-size px2rpx(26px)
+            margin-top px2rpx(34px)
+            .fl
+              float: left
+            .fr
+              float: right
+          .ruler
+            background #10AF7E
+            height 1px
+            position  relative
+            margin-top px2rpx(75px)
+            .bar
+              position absolute
+              top -0.325rem
+              height 0.65rem
+              width 0.65rem
+              border-radius 100%
+              background #D8D8D8
+              font-size  0.3rem
+              line-height  0.65rem
+              text-align  center
+            .startbar
+              left 0
+            .endbar
+              right 0
+              background #10AF7E
+      
+      .airport
+        padding 0 0 px2rpx(42px) px2rpx(24px)
+        .airport-group-name
+          border-bottom: 1px solid #e2e2e2
+          // margin-bottom: 0.1rem
+          height px2rpx(80px)
+          line-height: @height
+          font-size: px2rpx(30)
+          color: #969696
+          margin-top px2rpx(42px)
+        .item
+          height px2rpx(82px)
+          position: relative
+          line-height: @height
+          padding-left px2rpx(33px)
+          color #333
+          font-size px2rpx(28px)
+          border-bottom: 1px solid #e2e2e2
+          &.active::after
+            content: ''
+            display: block
+            position: absolute
+            top: 50%
+            right: 0.53rem
+            width px2rpx(44)
+            height: @width
+            margin-top: @height * -0.5
+            background inline-url("images/flight/v2/icon-check_1.png") center no-repeat
+            background-size contain

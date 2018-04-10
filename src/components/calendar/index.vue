@@ -23,7 +23,11 @@
 <script>
 import wepy from 'wepy';
 import { connect, getStore } from 'wepy-redux';
-import { CALE_INIT_DAYS, CALE_SELECT_DAYS } from '../../store/types/c-calendar';
+import {
+  C_CALE_INIT_DAYS,
+  C_CALE_SELECT_DAYS,
+  C_CALE_SELECTED_DAYS
+} from '../../store/types';
 
 const store = getStore();
 
@@ -93,26 +97,46 @@ export default class Panel extends wepy.component {
     selectDate(item) {
       if (!item.disabled) {
         store.dispatch({
-          type: CALE_SELECT_DAYS,
+          type: C_CALE_SELECT_DAYS,
           params: {
             item
           }
         });
       }
+      if (!this.multiple || this.selectedDays.length > 1) {
+        this.$emit('select', this.selectedDays.slice(0));
+      }
     }
   };
-  watch = {
-    value(newVal, oldVal) {
-      console.log(newVal);
-    }
-  };
+  // watch = {
+  //   value(newVal, oldVal) {
+  //     this.updateDays(newVal);
+  //   }
+  // };
   onLoad() {
+    this.initDates();
+    this.updateDays(this.value);
+  }
+  initDates() {
     store.dispatch({
-      type: CALE_INIT_DAYS,
+      type: C_CALE_INIT_DAYS,
       params: {
         duration: this.duration,
         disabledDate: this.disabledDate
       }
+    });
+  }
+  updateDays(arr) {
+    store.dispatch({
+      type: C_CALE_SELECTED_DAYS,
+      oper: 'update',
+      params: arr
+    });
+  }
+  deleteDays() {
+    store.dispatch({
+      type: C_CALE_SELECTED_DAYS,
+      oper: 'delete'
     });
   }
 }

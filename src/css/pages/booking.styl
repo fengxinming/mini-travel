@@ -80,6 +80,12 @@ page
               height px2rpx(26px)
               line-height @height
               display block
+            .close-icon
+              width px2rpx(30px)
+              height @width
+              position absolute
+              right px2rpx(200px)
+              margin-top px2rpx(42px)
             .datetime
               margin-top px2rpx(14px)
               font-weight 600
@@ -88,6 +94,8 @@ page
               height px2rpx(40px)
               line-height @height
               display block
+              &.gray
+                color #BFC3CD
           .between
             flex 2
             text-align center
@@ -101,7 +109,7 @@ page
               border 1rpx solid #D7D7D7
               border-radius px2rpx(8px)
               color #BFC3CD
-              width px2rpx(90px)
+              min-width px2rpx(90px)
               height px2rpx(40px)
               line-height: @height
               display inline-block
@@ -115,6 +123,9 @@ page
             flex 1
             font-size px2rpx(36px)
             color #BFC3CD
+            &.hasValue
+              color #3B4F62
+              font-weight 600
 
       .search-button
         margin-top px2rpx(60px)

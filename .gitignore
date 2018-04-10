@@ -1,5 +1,5 @@
 node_modules
 dist
-.DS_Store
+.DB_store
 .wepycache
 src/travel.config.js

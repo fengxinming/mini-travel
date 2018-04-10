@@ -1,4 +1,5 @@
 page
+  height 100%
   background #fff
   .search-header
     width 100%
@@ -48,9 +49,9 @@ page
         font-size px2rpx(30px)
         color #D0D7DE
   .hotel-list
-    height 100%
+    min-height 100%
     background #F2F5FA
-    padding px2rpx(20px) px2rpx(10px) 0
+    padding px2rpx(20px) px2rpx(10px) px2rpx(120px)
     .list-dl
       height px2rpx(220px)
       overflow hidden
@@ -121,6 +122,38 @@ page
         margin 0 auto
         background #F2F5FA
         z-index 9
+  .noData
+    font-size px2rpx(27px)
+    color #abb7c2
+    padding-top px2rpx(340px)
+    background url($imgUrlPrefix+'/images/hotel/no_data.png') no-repeat top px2rpx(160px) center
+    background-size px2rpx(186px) px2rpx(158px)
+    .tiptext
+      line-height px2rpx(42px)
+      text-align center
+    .search-items
+      text-align center
+      padding px2rpx(45px)
+      .item
+        display inline-block
+        width px2rpx(160px)
+        height px2rpx(70px)
+        line-height @height
+        border-radius px2rpx(8px)
+        color #0CC071
+        font-size px2rpx(30px)
+        border px2rpx(1px) solid #0CC071
+        text-align center
+        margin-right px2rpx(40px)
+        position relative
+        .del
+          position absolute
+          top 0
+          right 0
+          width px2rpx(30px)
+          height @width
+          background url($imgUrlPrefix+'/images/hotel/del-icon-1.png') no-repeat center center
+          background-size px2rpx(13px)
   .footer
     width 100%
     height px2rpx(98px)
@@ -130,6 +163,7 @@ page
     background #fff
     box-shadow 0 px2rpx(-2px) px2rpx(8px) 0 rgba(59,79,98,0.15)
     display flex
+    z-index 9
     text
       flex 1
       height px2rpx(40px)

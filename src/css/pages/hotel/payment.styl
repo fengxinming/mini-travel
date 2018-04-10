@@ -1,0 +1,100 @@
+page
+  background #F2F5FA
+  height 100%
+  .payment-wrapper
+    background #F2F5FA
+    padding-bottom px2rpx(110px)
+    .header
+      height px2rpx(207px)
+      box-shadow: 0 px2rpx(2px) px2rpx(4px) 0 rgba(59,79,98,0.04)
+      background #fff
+      padding px2rpx(30px) px2rpx(30px) px2rpx(30px)
+      margin-bottom px2rpx(10px)
+      box-sizing border-box
+      .title
+        height px2rpx(58px)
+        line-height @height
+        font-size px2rpx(34px)
+        color #3b4f62
+        font-weight 500
+      .date
+        height px2rpx(52px)
+        line-height @height
+        font-size px2rpx(30px)
+        color #9da4b5
+      .detail-header
+        display flex
+        line-height px2rpx(43px)
+        .detail-1
+          flex 3
+          font-size px2rpx(24px)
+          color #9da4b5
+        .detail-2
+          flex 1
+          font-size px2rpx(24px)
+          color #9da4b5
+          padding-right px2rpx(28px)
+          background url($imgUrlPrefix+'/images/hotel/turn-right.png') no-repeat right center
+          background-size px2rpx(22px) px2rpx(22px)
+          text-align right
+    .payment-type
+      padding px2rpx(20px) 0
+      .title
+        height px2rpx(62px)
+        line-height @height
+        font-size px2rpx(24px)
+        color #9da4b5
+        padding-left px2rpx(20px)
+      .types
+        background #fff
+        padding 0 px2rpx(20px)
+        .type
+          height px2rpx(100px)
+          line-height @height
+          font-size px2rpx(34px)
+          color #3b4f62
+          padding-left px2rpx(65px)
+          border-bottom px2rpx(1px) solid #F2F5FA
+          &.business
+            background url($imgUrlPrefix+'/images/hotel/qy.png') no-repeat left center
+            background-size px2rpx(42px)
+          &.wx
+            background url($imgUrlPrefix+'/images/hotel/wx.png') no-repeat left center
+            background-size px2rpx(42px) 
+    .footer
+      position fixed
+      bottom 0
+      left 0
+      width 100%
+      height px2rpx(110px)
+      background #fff
+      box-shadow: 0 px2rpx(-2px) px2rpx(8px) 0 rgba(59,79,98,0.15)
+      display flex
+      view.price
+        flex 1.6
+        clear both
+        padding-left px2rpx(25px)
+        .nums
+          float left
+          color #EE4747
+          line-height @height
+          em
+            font-size px2rpx(24px)
+          .num
+            font-size px2rpx(48px)
+        .detailed
+          float right
+          font-size px2rpx(26px)
+          color #abb7c2
+          line-height @height
+          padding-right px2rpx(65px)
+          background url($imgUrlPrefix+'/images/hotel/up-icon.png') no-repeat right px2rpx(20px) center
+          background-size px2rpx(28px) px2rpx(16px)
+      view.submit
+        flex 1
+        background #0CC071
+        height @height
+        line-height @height
+        text-align center
+        color #fff
+        font-size px2rpx(34px)

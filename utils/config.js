@@ -2,14 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
-const _ = require('lodash');
 
-const deepAssign = _.merge;
+const deepAssign = require('lodash.merge');
 
 class Factory {
-
   constructor(options) {
-
     const confDir = options.confDir;
     const NODE_ENV = options.env || process.env.NODE_ENV || 'development';
     const defaults = this.defaults = {};
@@ -31,13 +28,11 @@ class Factory {
         defaults[file] = confObject;
       }
     });
-
   }
 
   get(name) {
     return this.defaults[name];
   }
-
 }
 
 module.exports = Factory;

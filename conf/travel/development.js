@@ -1,5 +1,7 @@
 'use strict';
 
 module.exports = {
-  imagePrefix: 'http://localhost:7310'
+  imgUrlPrefix: 'http://192.168.1.150:7310',
+  REST_PATH: 'http://test.h5.ziztour.com/rest',
+  TEST_PATH: 'http://localhost:7310/test-api'
 };

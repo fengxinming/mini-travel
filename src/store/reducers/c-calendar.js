@@ -1,9 +1,13 @@
 import { handleActions } from 'redux-actions';
-import { CALE_INIT_DAYS, CALE_SELECT_DAYS } from '../types/c-calendar';
+import {
+  C_CALE_INIT_DAYS,
+  C_CALE_SELECT_DAYS,
+  C_CALE_SELECTED_DAYS
+} from '../types/c-calendar';
 import moment from 'moment';
 
 export default handleActions({
-  [CALE_INIT_DAYS](state, action) {
+  [C_CALE_INIT_DAYS](state, action) {
     const { params } = action;
     const calendars = [];
     const disabledFn = params.disabledDate;
@@ -37,7 +41,7 @@ export default handleActions({
       days: calendars
     };
   },
-  [CALE_SELECT_DAYS](state, action) {
+  [C_CALE_SELECT_DAYS](state, action) {
     let { selectedDays, rangedDays } = state;
     const { params } = action;
     const {
@@ -71,6 +75,32 @@ export default handleActions({
         break;
       case 2:
         selectedDays = [datetime];
+        break;
+    }
+    return {
+      ...state,
+      selectedDays,
+      rangedDays
+    };
+  },
+  [C_CALE_SELECTED_DAYS](state, action) {
+    let selectedDays = state.selectedDays;
+    const rangedDays = {};
+    const { oper, params = [] } = action;
+    switch (oper) {
+      case 'update':
+        selectedDays = params.slice(0);
+        if (selectedDays.length > 1) {
+          const sMo = moment(selectedDays[0]);
+          const diffDays = -sMo.diff(selectedDays[1], 'days');
+          for (let i = 0, j = diffDays - 1; i < j; i++) {
+            let tmp = sMo.add(1, 'days').format('YYYY-MM-DD');
+            rangedDays[tmp] = tmp;
+          }
+        }
+        break;
+      case 'delete':
+        selectedDays = [];
         break;
     }
     return {

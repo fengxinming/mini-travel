@@ -6,16 +6,16 @@
         text 09-02
       view.right 2晚
     view.search-bar
-      image.search-img(src="../../images/hotel/search-icon.png" alt="")
+      image.search-img(src=travelConfig.imgUrlPrefix + "/images/hotel/search-icon.png" alt="")
       text.input(@tap="goSearch") 酒店名、地标、位置
-  view.hotel-list
-    repeat(for="{{listData}}" item='item')
+  view.hotel-list(wx:if="{{searchListData&&searchListData.length}}")
+    repeat(for="{{searchListData}}" item='item')
       //- view {{item.title}}
       view.list-dl
         view.list-dt
-          image.list-img(src="../../images/hotel/hotel-img.png" alt="酒店预览图" width="100%" height="100%")
+          image.list-img(src="{{item.pic}}" alt="酒店预览图" width="100%" height="100%")
         view.list-dd
-          view.title 深圳静安寺和颐酒店
+          view.title {{item.name}}
           view.comment 
             text 4.8分 
             text 棒极啦 
@@ -23,14 +23,21 @@
           p 距离 深圳北站 100米
           view.confirm
             view.btns
-              i.btn 差旅优选
-              i.btn 同事入住
+              i.btn(wx:if="{{item.travelPriority}}") 差旅优选
+              i.btn(wx:if="{{item.recordType === 2}}") 同事入住
             view.price
-              i.p ￥550
+              i.p ￥{{item.price}}
               | 起
     view.nomore
       i.line
       text 没有更多了
+  view.noData(wx:else)
+    view.tiptext 抱歉，没有找到符合搜索条件的酒店
+    view.tiptext 换个条件查询
+    view.search-items
+      repeat(for="{{listData}}" item="item")
+        view.item {{item.title}}
+          view.del(@tap="delItem")
   view.footer
     repeat(for="{{footerData}}" item='item')
       text(class="{{num==index?'active':''}}") {{item.text}}
@@ -38,8 +45,26 @@
 
 <script>
 import wepy from 'wepy';
+import { connect } from 'wepy-redux';
+// import { HOTEL_SEARCH_LIST_DATA } from '@/store/types';
+import actions from '@/store/actions';
 
+// const store = getStore();
+
+@connect(
+  {
+    searchListData(state) {
+      return state.hotel.searchListData;
+    }
+  }
+  // {
+  //   searchList: actions.hotel.searchList
+  // }
+)
 export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '深圳'
+  };
   data = {
     listData: [
       {
@@ -60,7 +85,8 @@ export default class Index extends wepy.page {
       },
       { id: 4, text: '筛选' }
     ],
-    num: 1
+    num: 1,
+    params: {}
   };
 
   methods = {
@@ -68,7 +94,19 @@ export default class Index extends wepy.page {
       wx.navigateTo({
         url: './search'
       });
+    },
+    delItem() {
+      console.log('删除搜索条件');
     }
+  };
+
+  onLoad() {
+    this.params = {
+      cityId: '440300',
+      startDate: '2018-04-09',
+      endDate: '2018-04-010'
+    };
+    actions.hotel.searchList(this.params);
   }
 }
 </script>

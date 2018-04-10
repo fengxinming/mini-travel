@@ -1,3 +1,4 @@
+
 <template lang='jade'>
   view.container
     view.banners
@@ -14,6 +15,7 @@
 import wepy from 'wepy';
 import FlightPanel from '@/components/booking/flight-panel';
 import HotelPanel from '@/components/booking/hotel-panel';
+import http from '@/commons/http';
 // import testMixin from '../mixins/test';
 
 export default class Index extends wepy.page {
@@ -43,14 +45,20 @@ export default class Index extends wepy.page {
   events = {};
 
   onLoad() {
-    // let self = this;
-    // this.$parent.getUserInfo(function(userInfo) {
-    //   if (userInfo) {
-    //     // self.userInfo = userInfo;
-    //     // self.$apply();
-    //     self.setData({ userInfo: userInfo });
-    //   }
-    // });
+    http({
+      url: '/btravel/main/myinfo',
+      mask: true
+    })
+      .then(d => console.log('success', d))
+      .catch(err => console.log('error', err));
+    let self = this;
+    this.$parent.getUserInfo(function(userInfo) {
+      if (userInfo) {
+        self.userInfo = userInfo;
+        self.$apply();
+        // self.setData({ userInfo: userInfo });
+      }
+    });
   }
 }
 </script>

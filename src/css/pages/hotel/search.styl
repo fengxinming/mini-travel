@@ -34,6 +34,8 @@ page
       line-height px2rpx(76px)
       text-align center
   .search-history
+    clear both
+    content ''
     .title
       height px2rpx(90px)
       display flex
@@ -54,9 +56,13 @@ page
         height px2rpx(90px)
         line-height @height
     .list-wrapper
-      max-height px2rpx(180px)
-      overflow hidden
       padding 0 0 px2rpx(20px) px2rpx(20px)
+      clear both
+      &.stop
+        max-height px2rpx(180px)
+        overflow hidden
+      &.open
+        height auto        
       .list
         float left
         width px2rpx(220px)
@@ -69,6 +75,29 @@ page
         border-radius px2rpx(6px)
         margin-right px2rpx(20px)
         margin-bottom px2rpx(20px)
+        text-overflow ellipsis
+        white-space nowrap
+        overflow hidden
         &.active
           background #0cc071
           color #fff
+        &.toggle-btn
+          background url($imgUrlPrefix+'/images/hotel/jt.png') no-repeat center center #fff
+          background-size px2rpx(21px) px2rpx(12px)
+        &.toggle-btn-stop
+          transform rotate(180deg)
+    .toggle-btn
+      float left
+      width px2rpx(220px)
+      height px2rpx(80px)
+      text-align center
+      line-height @height
+      background #fff
+      font-size px2rpx(28px)
+      color #3b4f62
+      border-radius px2rpx(6px)
+      margin-right px2rpx(20px)
+      margin-bottom px2rpx(20px)
+      text-overflow ellipsis
+      white-space nowrap
+      overflow hidden

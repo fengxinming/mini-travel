@@ -1,0 +1,104 @@
+page
+  background #F2F5FA
+  .search-wrapper
+    height px2rpx(96px)
+    background #fff
+    padding px2rpx(10px) px2rpx(20px) px2rpx(10px) px2rpx(20px)
+    display flex
+    box-sizing border-box
+    box-shadow: 0 2px 4px 0 rgba(59,79,98,0.04);
+    .search
+      flex 8
+      height px2rpx(76px)
+      line-height @height
+      background rgba(191,195,205,0.1)
+      border-radius px2rpx(6px)
+      position relative
+      padding-left px2rpx(64px)
+      .search-icon
+        position absolute
+        left px2rpx(20px)
+        top px2rpx(26px)
+        width px2rpx(29px)
+        height px2rpx(29px)
+      input.input-search
+        height px2rpx(76px)
+        line-height @height
+        font-size px2rpx(30px)
+        color #d0d7de
+  .search-history
+    .title
+      height px2rpx(90px)
+      display flex
+      padding 0 px2rpx(20px)
+      .history-text
+        flex 1
+        display block
+        font-size px2rpx(24px)
+        color #9da4b5
+        line-height px2rpx(50px)
+        height px2rpx(90px)
+        line-height @height
+      .clear-history
+        flex 1
+        font-size px2rpx(24px)
+        color #3b4f62
+        text-align right
+        height px2rpx(90px)
+        line-height @height
+    .list-wrapper
+      max-height px2rpx(180px)
+      overflow hidden
+      padding 0 0 px2rpx(20px) px2rpx(20px)
+      .list
+        float left
+        width px2rpx(220px)
+        height px2rpx(80px)
+        text-align center
+        line-height @height
+        background #fff
+        font-size px2rpx(28px)
+        color #3b4f62
+        border-radius px2rpx(6px)
+        margin-right px2rpx(20px)
+        margin-bottom px2rpx(20px)
+        &.active
+          background #0cc071
+          color #fff
+  .letter-list
+    .letter-wrapper
+      height px2rpx(50px)
+      overflow hidden
+      border-bottom px2rpx(1px) solid #F2F5FA
+      &.active
+        height auto
+        overflow scroll
+        .letter-title
+          color #0CC071
+      .letter-title
+        display block
+        height px2rpx(50px)
+        background #fff
+        padding-left px2rpx(25px)
+        font-size px2rpx(24px)
+        color #3b4f62
+        line-height @height
+      .list-city-wrapper
+        padding px2rpx(30px) px2rpx(20px) 0
+        .list-city
+          width px2rpx(220px)
+          height px2rpx(84px)
+          line-height @height
+          float left
+          margin-right px2rpx(25px)
+          margin-bottom px2rpx(20px)
+          text-align center
+          background #fff
+          font-size px2rpx(28px)
+          color #3b4f62
+          border-radius px2rpx(6px)
+          &:nth-child(3n)
+            margin-right 0
+          &.active
+            background #0cc071
+            color #fff

@@ -43,21 +43,15 @@ module.exports = {
     },
     styl: {
       compress: prod,
-      supportObject: true,
       includeCSS: true,
-      define: {
-        '$imagePrefix': travelConfig.imagePrefix
+      globals: {
+        '$imgUrlPrefix': travelConfig.imgUrlPrefix
       },
       import: [
         path.join('src', 'css', 'utils', '**/*.styl')
       ]
     },
     jade: {
-      engine: 'pug',
-      travelConfig
-    },
-    view: {
-      engine: 'pug',
       travelConfig
     },
     babel: {
@@ -96,8 +90,17 @@ if (prod) {
           quality: 80
         }
       }
+    },
+    replace: {
+      filter: /moment\.js$/,
+      config: {
+        find: /([\w\[\]a-d\.]+)\s*instanceof Function/g,
+        replace: function (matchs, word) {
+          return ' typeof ' + word + " ==='function' ";
+        }
+      }
     }
-  }
+  };
 } else {
   // ================= 初始化一个本地开发服务，用于加载静态资源
 

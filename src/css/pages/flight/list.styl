@@ -1,0 +1,132 @@
+page
+  background #f2f5fa
+  .search-header
+    background #fff
+    width 100%
+    height px2rpx(96px)
+    padding px2rpx(10px)
+    box-sizing border-box
+    box-shadow 0 2px 4px 0 rgba(59,79,98,0.04)
+    display flex
+    position fixed
+    top 0
+    view
+      flex 1
+      font-size px2rpx(28px)
+      em 
+        content ''
+        display inline-block
+      .left-icon
+        width px2rpx(44px)
+        height @width
+        vertical-align middle
+      .right-icon
+        width px2rpx(44px)
+        height @width
+        vertical-align middle
+      &.yesterday, &.tomorrow
+        line-height px2rpx(70px)
+      &.tomorrow
+        text-align right
+      &.today
+        flex 2
+        text-align center
+        line-height px2rpx(70px)
+        background #ABB7C2
+        border-radius px2rpx(6px)
+        color #fff
+        .calendar-icon
+          width px2rpx(25px)
+          height px2rpx(27px)
+        text
+          margin-left px2rpx(8px)
+        
+  .flight-list
+    padding px2rpx(20px) px2rpx(10px)
+    margin-top px2rpx(96px)
+    .nomore
+      text-align center
+      color #ABB7C2
+      font-size px2rpx(30px)
+      margin-top px2rpx(60px)
+      .btn
+        margin-top px2rpx(50px)
+        color #0CC071
+        text
+          padding px2rpx(24px) px2rpx(47px)
+          border 1px solid #0CC071
+          border-radius px2rpx(8px)
+    .list-dl
+      background #fff
+      margin-bottom px2rpx(20px)
+      box-shadow 0 px2rpx(3px) px2rpx(8px) 0 rgba(59,79,98,0.15)
+      padding px2rpx(23px) px2rpx(20px)
+      font-size px2rpx(22px)
+      border-radius px2rpx(8px)
+      color #ABB7C2
+      &:last-child
+        margin-bottom px2rpx(98px)
+      .t-r
+        text-align right
+      .list-dd
+        display flex
+        &>view
+          flex 1
+        .middle
+          &.mt-90
+            margin-top px2rpx(48px)
+          &.mt-10
+            margin-top px2rpx(10px)
+          .middle-icon
+            width px2rpx(110px)
+            height px2rpx(8px)
+            display block
+          .middle-stop
+            width px2rpx(110px)
+            text-align center
+            font-size px2rpx(20px)
+        .date
+          font-size px2rpx(40px)
+          color #3B4F62
+        .price
+          color #EE4747
+          i
+            font-size px2rpx(26px)
+          font-size px2rpx(48px)
+      .flight-desc
+        margin-top px2rpx(10px)
+        view
+          flex 1
+        .flight-no
+          flex 3
+        .price-min
+          color #0CC071
+          border 1px solid #0CC071
+          border-radius px2rpx(4px)
+          padding 0 px2rpx(6px)
+  .footer
+    width 100%
+    height px2rpx(98px)
+    position fixed
+    bottom 0
+    left 0
+    background #fff
+    box-shadow 0 px2rpx(-2px) px2rpx(8px) 0 rgba(59,79,98,0.15)
+    display flex
+    view
+      flex 1
+      font-size px2rpx(22px)
+      color #9da4b5
+      text-align center
+      &.active
+        color #0CC071
+      .icon
+        width px2rpx(50px)
+        height px2rpx(52px)
+        display block
+        margin 0 auto
+        margin-top px2rpx(10px)
+
+#cabin
+  background #F2F5FA
+  padding px2rpx(20px) px2rpx(10px)
