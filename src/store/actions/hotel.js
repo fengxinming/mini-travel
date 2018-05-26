@@ -9,9 +9,23 @@ export default ({ HOTEL_SEARCH_LIST_DATA, http, store }) => {
       }).then(res => {
         store.dispatch({
           type: HOTEL_SEARCH_LIST_DATA,
-          payload: res
+          payload: res || {}
         });
         // return res;
+      }, (res) => {
+        res = res || {};
+        res.data = { resultList: [] };
+        store.dispatch({
+          type: HOTEL_SEARCH_LIST_DATA,
+          payload: res
+        });
+      }).catch(res => {
+        res = res || {};
+        res.data = { resultList: [] };
+        store.dispatch({
+          type: HOTEL_SEARCH_LIST_DATA,
+          payload: res
+        });
       });
     }
   };

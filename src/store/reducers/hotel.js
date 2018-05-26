@@ -39,7 +39,7 @@ export default handleActions({
     return {
       ...state,
       searchListData: Data.resultList
-    }
+    };
   }
 }, {
   test: 0,
